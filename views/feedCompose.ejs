@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<h1>WRITE A FEEDBACK</h1>
+<br />
+
+<form class="" action="/feedCompose" method="post">
+  <div class="form-group">
+    <label for="">Your Name</label>
+    <input type="text" name="name" class="form-control" autocomplete="off"><br />
+    <label for="">Feedback</label>
+    <textarea name="feedback" rows="8" cols="80" class="form-control" maxlength="100" autocomplete="off"></textarea>
+  </div>
+  <button type="submit" name="button" class="btn btn-primary">Post</button>
+</form>
+
+<%- include("partials/footer"); -%>

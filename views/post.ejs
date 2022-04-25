@@ -1,0 +1,76 @@
+<%- include("partials/header"); -%>
+
+
+
+
+
+<h1><%= title %></h1>
+<p><%= content %></p>
+<br />
+
+<form action="/posts/<%= rpid %>/like" method="post">
+  <div class="fl">
+    <button onclick="myFunction(this, 'red')" class=" thumb material-icons">thumb_up</button>
+    <!-- <script>
+      function myFunction(element, color) {
+        element.style.color = color;
+      }
+    </script> -->
+    <h5 class="likecount"><strong><%=post.likes.length%></strong></h5>
+    </div>
+  </form>
+
+  <!-- <form action="/posts/<%= rpid %>/dislike" method="post">
+    <div class="fl">
+      <button onclick="myFunction(this, 'red')" class=" thumb material-icons">thumb_down</button>
+      <!-- <script>
+        function myFunction(element, color) {
+          element.style.color = color;
+        }
+      </script> -->
+      <!-- <h5 class="likecount"><strong><%=post.likes.length%></strong></h5>
+      </div>
+    </form>  -->
+
+
+<!-- <i class="material-icons">thumb_down</i> -->
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<form class="com" action="/posts/<%= rpid %>/comment" method="post">
+  <div class="form-group form-grp">
+    <textarea name="comm" rows="2" cols="15" class="form-control" maxlength="400" autocomplete="off"></textarea>
+  </div>
+  <button type="submit" name="button" class="btn btn-primary" id="bt">Add Comment</button>
+</form>
+
+<div class="container pt-5">
+  <div class="container">
+    <div class="row">
+
+        <% post.comments.forEach(function(comment){ %>
+          <div class="col-12">
+              <i class=" mi material-icons">person</i>
+              <strong class="author"><%= comment.author %></strong>
+          <p>
+          <i><%= comment.comment %></i>
+          </p>
+
+      </div>
+      <br>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<%- include("partials/footer"); -%>

@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+<br />
+
+
+
+<form action="/search" method="post">
+  <div class="fl">
+    <input type="text" name="searchedTitle" class="form-control" id="fl1" placeholder="search an article...">
+    <button type="submit" name="button" class="btn btn-primary ">Search</button>
+  </div>
+</form>
+
+    <h1>ARTICLES</h1>
+    <br />
+
+
+
+    <p> <%= startingContent %></p>
+    <br />
+
+  <% posts.forEach(function(post){ %>
+    <h4><%= post.title %></h4>
+    <p>
+      <%= post.content.substring(0,100)  %><br>
+      <%= post.content.substring(101,200) %><br>
+      <%= post.content.substring(201,300) + " ..." %><br>
+      <a href="/posts/<%= post._id %>"> Read More</a>
+    </p>
+    <br>
+  <% }) %>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+    <br />
+    <h1>YOUR FEEDBACKS</h1>
+    <br />
+
+
+    <% feeds.forEach(function(feed){ %>
+      <h5 class="feed-name"><%= feed.name %></h5>
+      <p class="feed-body">
+        <%= feed.feedback %>
+      </p>
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
